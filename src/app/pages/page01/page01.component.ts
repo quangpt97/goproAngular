@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {Page01Model} from '../../models/page01.model';
-import flatpickr from "flatpickr";
+import flatpickr from 'flatpickr';
 
 @Component({
   selector: 'app-page01',
@@ -11,6 +11,7 @@ import flatpickr from "flatpickr";
 export class Page01Component implements OnInit, AfterViewInit {
   // pageTitle = 'シフト希望を募集';
   page01Form: Page01Model;
+  timePicker: Date = null;
 
   constructor(translate: TranslateService) {
     translate.setDefaultLang('jp');
@@ -26,6 +27,7 @@ export class Page01Component implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this._initForm();
+
   }
 
   submitForm() {
@@ -35,6 +37,17 @@ export class Page01Component implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    flatpickr(".date-picker");
+    flatpickr('.date-picker', {
+      dateFormat: 'Y-m'
+    });
+    flatpickr('.date-picker-day', {
+      dateFormat: 'Y-m-d'
+    });
+    flatpickr('.date-picker-time', {
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: 'H:i',
+      time_24hr: true
+    });
   }
 }

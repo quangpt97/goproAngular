@@ -7,17 +7,25 @@ export interface Page01Interface {
   itemDate: string;
   itemTime: string;
   desc?: string;
-  itemCheck: Array<number>;
+  itemCheck1: boolean;
+  itemCheck2: boolean;
+  itemCheck3: boolean;
+  itemCheck4: boolean;
+  itemCheck5: boolean;
 }
-
 
 export class Page01Model implements Page01Interface {
   desc = '';
   endDate = '';
-  itemCheck = [];
+  // itemCheck = [];
   itemDate = '';
   itemTime = '';
   startDate = '';
+  itemCheck1 = false;
+  itemCheck2 = false;
+  itemCheck3 = false;
+  itemCheck4 = false;
+  itemCheck5 = false;
 
   formGroup: FormGroup;
 
@@ -35,7 +43,6 @@ export class Page01Model implements Page01Interface {
     return this.formGroup.value;
   }
 
-
   createForm(value?: Page01Interface) {
     const checkValue = (name) => {
       if (value && (name in value)) {
@@ -49,9 +56,14 @@ export class Page01Model implements Page01Interface {
       desc: new FormControl(checkValue('desc')),
       endDate: new FormControl(checkValue('endDate')),
       startDate: new FormControl(checkValue('startDate')),
-      itemCheck: new FormControl(checkValue('itemCheck')),
       itemDate: new FormControl(checkValue('itemDate')),
       itemTime: new FormControl(checkValue('itemTime')),
+      itemCheck1: new FormControl(checkValue('itemCheck1')),
+      itemCheck2: new FormControl(checkValue('itemCheck2')),
+      itemCheck3: new FormControl(checkValue('itemCheck3')),
+      itemCheck4: new FormControl(checkValue('itemCheck4')),
+      itemCheck5: new FormControl(checkValue('itemCheck5'))
+
     });
   }
 

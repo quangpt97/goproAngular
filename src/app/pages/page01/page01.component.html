@@ -6,42 +6,42 @@
     <span class="span-time">募集期間<span style="color: red">※</span></span>
     <input type="text" formControlName="startDate" class="form-control input-date date-picker" value="2017/06">
     ~
-    <input formControlName="endDate" type="text" class="form-control input-date" value="2017/07">
+    <input formControlName="endDate" type="text" class="form-control input-date date-picker" value="2017/07">
   </div>
   <div class="form-group">
     <span class="span-time">募集期間<span style="color: red">※</span></span>
-    <input type="text" class="form-control input-date" value="2017/06/01">
-    <input type="text" class="form-control small" value="11:00">
+    <input type="text" formControlName="itemDate" class="form-control input-date date-picker date-picker-day" value="2017/06/01">
+    <input type="text" formControlName="itemTime" class="form-control small date-picker date-picker-time" value="11:00">
   </div>
   <div class="form-group">
     <label for="備考">備考</label>
-    <textarea class="form-control" rows="5" id="備考" placeholder="3000文字以内"></textarea>
+    <textarea class="form-control" formControlName="desc" rows="5" id="備考" placeholder="3000文字以内"></textarea>
     <label for="備考">0/3000</label>
   </div>
   <div class="form-group">
     <label for="備考">募集項目<label style="color: red;padding-right: 15px">※1つ以上選択</label></label>
     <div class="custom-control custom-checkbox custom-control-inline">
-      <input type="checkbox" class="custom-control-input" id="defaultInline1">
+      <input type="checkbox" formControlName="itemCheck1" class="custom-control-input" id="defaultInline1">
       <label class="custom-control-label color-checkbox" for="defaultInline1">希望休</label>
     </div>
 
     <!-- Default inline 2-->
     <div class="custom-control custom-checkbox custom-control-inline">
-      <input type="checkbox" class="custom-control-input" id="defaultInline2">
+      <input type="checkbox" formControlName="itemCheck2" class="custom-control-input" id="defaultInline2">
       <label class="custom-control-label color-checkbox" for="defaultInline2">夜勤NG</label>
     </div>
 
     <!-- Default inline 3-->
     <div class="custom-control custom-checkbox custom-control-inline">
-      <input type="checkbox" class="custom-control-input" id="defaultInline3">
+      <input type="checkbox" formControlName="itemCheck3" class="custom-control-input" id="defaultInline3">
       <label class="custom-control-label color-checkbox" for="defaultInline3">夜勤希望</label>
     </div>
     <div class="custom-control custom-checkbox custom-control-inline">
-      <input type="checkbox" class="custom-control-input" id="defaultInline4">
+      <input type="checkbox" formControlName="itemCheck4" class="custom-control-input" id="defaultInline4">
       <label class="custom-control-label color-checkbox" for="defaultInline4">外勤予定</label>
     </div>
     <div class="custom-control custom-checkbox custom-control-inline">
-      <input type="checkbox" class="custom-control-input" id="defaultInline5">
+      <input type="checkbox" formControlName="itemCheck5" class="custom-control-input" id="defaultInline5">
       <label class="custom-control-label color-checkbox" for="defaultInline5">その他の予定 (学会・研修等)</label>
     </div>
 

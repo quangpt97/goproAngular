@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import  { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,7 @@ import { Page03Component } from './pages/page03/page03.component';
 import { Page04Component } from './pages/page04/page04.component';
 import { Page05Component } from './pages/page05/page05.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FlatpickrModule} from 'angularx-flatpickr';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -34,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     Page05Component
   ],
   imports: [
+    FormsModule, FlatpickrModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
